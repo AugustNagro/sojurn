@@ -11,7 +11,7 @@ class ThreadLocalPrintStream extends PrintStream {
     private InheritableThreadLocal<PrintStream> stream = new InheritableThreadLocal<>();
 
     /**
-     * @param defaultSysOut should be `System.in
+     * @param defaultSysOut should be System.in
      */
     ThreadLocalPrintStream(PrintStream defaultSysOut) {
         super(defaultSysOut);
