@@ -3,6 +3,9 @@ Run Java faster with a local app server.
 
 ![usage](./images/speedup.png "usage")
 
+## Installation
+* Mac: `brew install augustnagro/tools/sojurn`
+
 ## Requirements
 * Mac or Linux, until Graal's Substrate VM adds Windows Support
 * Java 11+ JDK (can be built for lower version)
@@ -21,13 +24,6 @@ This requires the server jar be placed in the user's home
 directory, or be installed via package manager
 ```
 
-## Recommendations
-* Install with with a package manager:
-
-brew install augustnagro/tools/sojurn
-
-* Only run with trusted applications on account of the inherent security vulnerability.
-
 ## Architecture
 Sojurn operates using the client-server model. The client feeds requests to a long-running virtual machine over sockets, saving the need to initialize a new VM on each run.
 
@@ -39,10 +35,9 @@ This project is similar in scope to [Nailgun](https://github.com/facebook/nailgu
 * Run `native-image -H:Name=sojurn -jar client.jar`
 
 ## TODO
-* Build for Linux
-* Fix client hanging on exceptions (like filenotfound)
+* Build for Linux & deploy to other package managers
 * Consider Nailgun client-server protocols:
     * Named pipes on windows (see Nailgun)
     * JNI native sockets on Unix (see Nailgun, project Panama)
     * Memory-mapped file
-* Testing & Comments
+* Testing
